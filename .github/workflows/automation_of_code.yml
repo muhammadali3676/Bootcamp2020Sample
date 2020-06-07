@@ -26,10 +26,19 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
-
+    
+    - name: Github Action for Yarn
+      uses: Borales/actions-yarn@v2.1.0
+      with:
+          cmd: install
+      
+    - name: creating build
+      run: yarn build
     # Runs a set of commands using the runners shell
     - name: Installing Surge
       run: npm install --global surge
+      
+
     # deploy website on surge
     - name: Deploying using surge
-      run: surge ./ http://the-world-of-jiny.surge.sh --token ${{secrets.My_Token}}
+      run: surge ./build myfirstreactapp-ali.surge.sh --token ${{secrets.My_Token}}
