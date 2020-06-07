@@ -41,4 +41,4 @@ jobs:
 
     # deploy website on surge
     - name: Deploying using surge
-      run: surge ./myfirstapp/build myfirstreactapp-ali.surge.sh --token ${{secrets.My_Token}}
+      run: surge ./build myfirstreactapp-ali.surge.sh --token ${{secrets.My_Token}}
