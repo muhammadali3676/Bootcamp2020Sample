@@ -41,4 +41,4 @@ jobs:
 
     # deploy website on surge
     - name: Deploying using surge
-      run: surge ./build poor-bike.surge.sh --token ${{secrets.My_Token}}
+      run: surge ./build http://poor-bike.surge.sh/ --token ${{secrets.My_Token}}
